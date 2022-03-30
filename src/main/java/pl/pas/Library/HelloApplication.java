@@ -7,12 +7,8 @@ import pl.pas.Library.repositories.RentRepository;
 import pl.pas.Library.repositories.UserRepository;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
-import javax.ejb.EJBs;
-import javax.ejb.Init;
 import javax.inject.Inject;
 import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.BeanParam;
 import javax.ws.rs.core.Application;
 import java.time.LocalDate;
 

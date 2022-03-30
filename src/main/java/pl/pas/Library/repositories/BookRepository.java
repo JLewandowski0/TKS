@@ -4,12 +4,8 @@ import pl.pas.Library.exceptions.BookNotFoundException;
 import pl.pas.Library.exceptions.BookNotUniqueIdException;
 import pl.pas.Library.model.Book;
 
-import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
-import javax.validation.constraints.Null;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;

@@ -1,7 +1,7 @@
 package pl.pas.Library.ExceptionsMapper;
 
 
-import pl.pas.Library.exceptions.RentNotUniqueIdException;
+import exceptions.RentNotUniqueIdException;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;

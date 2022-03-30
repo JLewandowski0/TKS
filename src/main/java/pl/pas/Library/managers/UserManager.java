@@ -2,7 +2,6 @@ package pl.pas.Library.managers;
 
 import pl.pas.Library.exceptions.*;
 import pl.pas.Library.model.AccessLevel;
-import pl.pas.Library.model.Book;
 import pl.pas.Library.model.User;
 import pl.pas.Library.repositories.RentRepository;
 import pl.pas.Library.repositories.UserRepository;
