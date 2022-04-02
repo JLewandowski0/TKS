@@ -8,11 +8,24 @@
     <artifactId>RepositoriesAdapters</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>RepositoriesAdapters</name>
+    <packaging>war</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>pl.tks.core</groupId>
+            <artifactId>ApplicationServices</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>pl.tks.ports</groupId>
+            <artifactId>ApplicationPorts</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
     <parent>
         <artifactId>TKS</artifactId>
         <groupId>pl.tks</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
 </project>

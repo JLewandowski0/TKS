@@ -3,7 +3,6 @@ package pl.pas.Library.endpoints;
 import pl.pas.Library.dto.UserDto;
 import pl.pas.Library.DtoMapper.UserMapper;
 import pl.pas.Library.managers.UserManager;
-import pl.pas.Library.model.Rent;
 import pl.pas.Library.model.User;
 
 import javax.enterprise.context.RequestScoped;
@@ -14,7 +13,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @RequestScoped

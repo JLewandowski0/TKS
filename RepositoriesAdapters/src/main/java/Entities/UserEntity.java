@@ -1,17 +1,15 @@
-package pl.pas.Library.dto;
+package Entities;
 
-import pl.pas.Library.model.AccessLevel;
-import pl.pas.Library.otherValidation.ValueOfEnum;
+import otherValidation.ValueOfEnum;
+import pl.tks.model.AccessLevelEnt;
 
 import javax.json.bind.annotation.JsonbCreator;
 import javax.json.bind.annotation.JsonbProperty;
-import javax.json.bind.annotation.JsonbTypeAdapter;
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-public class UserDto {
+public class UserEntity {
 
     @NotNull
     @Size(min = 5)
@@ -26,11 +24,11 @@ public class UserDto {
     private String pesel;
 
     @NotNull
-    @ValueOfEnum(enumClass = AccessLevel.class)
+    @ValueOfEnum(enumClass = AccessLevelEnt.class)
     private String accessLevel;
 
     @JsonbCreator
-    public UserDto(@JsonbProperty("login")String login, @JsonbProperty("address")String address, @JsonbProperty("pesel")String pesel, @JsonbProperty("accessLevel") String accessLevel) {
+    public UserEntity(@JsonbProperty("login")String login, @JsonbProperty("address")String address, @JsonbProperty("pesel")String pesel, @JsonbProperty("accessLevel") String accessLevel) {
         this.login = login;
         this.address = address;
         this.pesel = pesel;

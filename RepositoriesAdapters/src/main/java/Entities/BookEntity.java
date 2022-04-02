@@ -1,19 +1,15 @@
-package pl.pas.Library.dto;
+package Entities;
 
 
-import pl.pas.Library.model.AccessLevel;
-import pl.pas.Library.otherValidation.CheckDateFormat;
+import otherValidation.CheckDateFormat;
 
 import javax.json.bind.annotation.JsonbCreator;
-import javax.json.bind.annotation.JsonbDateFormat;
 import javax.json.bind.annotation.JsonbProperty;
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 
-public class BookDto {
+public class BookEntity {
 
     @NotNull
     @Size(min = 2)
@@ -30,7 +26,7 @@ public class BookDto {
     private String releaseDate;
 
     @JsonbCreator
-    public BookDto(@JsonbProperty("title")String title,@JsonbProperty("authorName")String authorName,@JsonbProperty("releaseDate")  String releaseDate) {
+    public BookEntity(@JsonbProperty("title")String title, @JsonbProperty("authorName")String authorName, @JsonbProperty("releaseDate")  String releaseDate) {
         this.title = title;
         this.authorName = authorName;
         this.releaseDate = releaseDate;

@@ -1,18 +1,13 @@
-package pl.pas.Library.dto;
+package Entities;
 
-import pl.pas.Library.model.AccessLevel;
-import pl.pas.Library.model.Book;
-import pl.pas.Library.model.User;
-import pl.pas.Library.otherValidation.CheckDateFormat;
+import otherValidation.CheckDateFormat;
 
 import javax.json.bind.annotation.JsonbCreator;
 import javax.json.bind.annotation.JsonbProperty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import java.time.LocalDate;
 import java.util.UUID;
 
-public class RentDto {
+public class RentEntity {
 
     @NotNull
     @CheckDateFormat(pattern = "yyyy-MM-dd")
@@ -25,7 +20,7 @@ public class RentDto {
     private UUID bookUuid;
 
     @JsonbCreator
-    public RentDto(@JsonbProperty("startDate")String startDate,@JsonbProperty("clientUuid") UUID clientUuid,  @JsonbProperty("bookUuid")UUID bookUuid) {
+    public RentEntity(@JsonbProperty("startDate")String startDate, @JsonbProperty("clientUuid") UUID clientUuid, @JsonbProperty("bookUuid")UUID bookUuid) {
         this.startDate = startDate;
         this.clientUuid = clientUuid;
         this.bookUuid = bookUuid;
