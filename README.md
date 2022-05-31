@@ -1,2 +1,2 @@
 # TKS
-TKS hexagonal project
+TKS hexagonal architecture project
