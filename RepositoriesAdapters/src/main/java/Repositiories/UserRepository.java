@@ -57,16 +57,6 @@ public class UserRepository implements Repository<UserEnt> {
         return null;
     }
 
-    @Override
-    public List<UserEnt> getAll(Predicate<UserEnt> predicate) {
-        List<UserEnt> ret = new ArrayList<>();
-        for (UserEnt c : users) {
-            if (predicate.test(c)) {
-                ret.add(c);
-            }
-        }
-        return ret;
-    }
 
     @Override
     public List<UserEnt> getAll() {

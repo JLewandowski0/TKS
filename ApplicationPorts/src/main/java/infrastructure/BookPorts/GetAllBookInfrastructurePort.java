@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface GetAllBookInfrastructurePort {
     List<Book> getAll();
+    List<Book> getAll(Predicate<Book> predicate);
 }

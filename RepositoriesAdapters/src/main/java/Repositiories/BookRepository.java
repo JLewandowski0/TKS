@@ -51,17 +51,6 @@ public class BookRepository implements Repository<BookEnt> {
         return null;
     }
 
-    @Override
-    public List<BookEnt> getAll(Predicate<BookEnt> predicate) {
-        List<BookEnt> ret = new ArrayList<>();
-
-        for (BookEnt c : books) {
-            if (predicate.test(c) && !c.isArchived()) {
-                ret.add(c);
-            }
-        }
-        return ret;
-    }
 
     public List<BookEnt> getAll() {
         List<BookEnt> ret = new ArrayList<>();

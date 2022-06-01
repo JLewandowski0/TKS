@@ -1,15 +1,14 @@
 package EntityMapper;
 
-import Entities.BookEntity;
 import model.Book;
+import pl.tks.model.BookEnt;
 
 import javax.ejb.Stateless;
-import java.time.LocalDate;
 
 @Stateless
 public class BookMapper {
-    public Book ConvertBookEntityToBook(BookEntity bookEntity){
-        return new Book(bookEntity.getTitle(), bookEntity.getAuthorName(), LocalDate.parse(bookEntity.getReleaseDate()));
+    public BookEnt ConvertBookToBookEnt(Book book){
+        return new BookEnt(book.getTitle(), book.getAuthorName(), book.getReleaseDate());
     }
 
 }

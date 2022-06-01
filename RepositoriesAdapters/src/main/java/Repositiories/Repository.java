@@ -11,7 +11,6 @@ public interface Repository<T> {
     boolean add(T t) throws BookNotUniqueIdException;
     boolean remove(T t);
     T get(Predicate<T> predicate);
-    List<T> getAll(Predicate<T> predicate);
     List<T> getAll();
 
 }

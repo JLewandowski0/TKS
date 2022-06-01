@@ -15,16 +15,16 @@ public class BookService {
 
     @Inject
     RentService rentService;
-    @Inject
-    GetBookPredicateInfrastructurePort getBookPredicateInfrastructurePort;
-    @Inject
-    GetAllBookPredicateInfrastructurePort getAllBookPredicateInfrastructurePort;
+
     @Inject
     GetAllBookInfrastructurePort getAllBookInfrastructurePort;
+
     @Inject
     GetBookInfrastructurePort getBookInfrastructurePort;
+
     @Inject
     RemoveBookInfrastracturePort removeBookInfrastracturePort;
+
     @Inject
     AddBookInfrastructurePort addBookInfrastructurePort;
 
@@ -60,7 +60,7 @@ public class BookService {
         if (book == null) {
             throw new BookNotFoundException("There is no book with given id!");
         }
-        if (rentService.getAllRentPredicateInfrastructurePort.getAll(x -> x.getBook().getUuid().equals(uuid) && x.getEndDate() == null).size() != 0) {
+        if (rentService.getAllRentInfrastructurePort.getAll(x -> x.getBook().getUuid().equals(uuid) && x.getEndDate() == null).size() != 0) {
             throw new BookAlreadyRentedException("You cannot remove rented book!");
         }
         removeBookInfrastracturePort.remove(book);
