@@ -1,21 +1,21 @@
 package EntityMapper;
 
-import Entities.UserEntity;
 import model.*;
+import pl.tks.model.*;
 
 import javax.ejb.Stateless;
 
 
 @Stateless
 public class UserMapper {
-    public User ConvertUserEntityToUser(UserEntity userEntity){
-        switch(userEntity.getAccessLevel()){
+    public UserEnt ConvertUserToUserEnt(User user){
+        switch(user.getAccessLevel()){
             case "CLIENT":
-                return new Client(userEntity.getLogin(), userEntity.getAddress(), userEntity.getPesel(),AccessLevel.CLIENT);
+                return new ClientEnt(user.getLogin(), user.getAddress(), user.getPesel(), AccessLevelEnt.CLIENT);
             case "ADMINRESOURCES":
-                return new AdminResources(userEntity.getLogin(), userEntity.getAddress(), userEntity.getPesel(), AccessLevel.ADMINRESOURCES);
+                return new AdminResourcesEnt(user.getLogin(), user.getAddress(), user.getPesel(), AccessLevelEnt.ADMINRESOURCES);
             case "ADMINUSER":
-                return new AdminUser(userEntity.getLogin(), userEntity.getAddress(), userEntity.getPesel(),AccessLevel.ADMINUSER);
+                return new AdminUserEnt(user.getLogin(), user.getAddress(), user.getPesel(),AccessLevelEnt.ADMINUSER);
             default:
                 return null;
         }

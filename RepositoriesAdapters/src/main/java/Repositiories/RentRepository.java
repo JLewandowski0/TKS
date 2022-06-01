@@ -52,17 +52,6 @@ public class RentRepository implements Repository<RentEnt> {
         return null;
     }
 
-    @Override
-    public List<RentEnt> getAll(Predicate<RentEnt> predicate) {
-        List<RentEnt> ret = new ArrayList<>();
-
-        for (RentEnt c : rents) {
-            if (predicate.test(c)) {
-                ret.add(c);
-            }
-        }
-        return ret;
-    }
 
     @Override
     public List<RentEnt> getAll() {

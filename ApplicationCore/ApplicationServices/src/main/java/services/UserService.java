@@ -1,7 +1,6 @@
 package services;
 
 
-import infrastructure.RentPorts.GetAllRentPredicateInfrastructurePort;
 import infrastructure.UserPorts.*;
 import exceptions.*;
 
@@ -32,11 +31,6 @@ public class UserService {
     @Inject
     RemoveUserInfrastructurePort removeUserInfrastructurePort;
 
-    @Inject
-    GetAllUsersPredicateInfrastructurePort getAllUsersPredicateInfrastructurePort;
-
-    @Inject
-    GetUserPredicateInfrastructurePort getUserPredicateInfrastructurePort;
 
     public User addUser(User user) {
         addUserInfrastructurePort.add(user);
@@ -56,7 +50,7 @@ public class UserService {
     }
 
     public User findUser(String login) {
-        User user = getUserPredicateInfrastructurePort.get(x -> x.getLogin().equals(login));
+        User user = getUserInfrastructurePort.get(x -> x.getLogin().equals(login));
         if (user == null) {
             throw new UserNotFoundException("There is no user with given login!");
         }
@@ -64,7 +58,7 @@ public class UserService {
     }
 
     public List<User> findAllUsers(String partOfLogin) {
-        return getAllUsersPredicateInfrastructurePort.getAll(x -> x.getLogin().contains(partOfLogin));
+        return getAllUsersInfrastructurePort.getAll(x -> x.getLogin().contains(partOfLogin));
     }
 
     public void updateUser(UUID uuid, User updatedUser) {
@@ -77,7 +71,7 @@ public class UserService {
         user.setAccessLevel(AccessLevel.valueOf(updatedUser.getAccessLevel()));
 
         if (!updatedUser.getLogin().equals(user.getLogin())) {
-            if (getUserPredicateInfrastructurePort.get(x -> x.getLogin().equals(updatedUser.getLogin())) != null) {
+            if (getUserInfrastructurePort.get(x -> x.getLogin().equals(updatedUser.getLogin())) != null) {
                 throw new UserNotUniqueLoginException("User with given login already exist!");
            }
             user.setLogin(updatedUser.getLogin());
@@ -96,7 +90,7 @@ public class UserService {
             throw new UserNotActiveException("This user is already inactive!");
         }
 
-        if (rentService.getAllRentPredicateInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(uuid) && x.getEndDate() == null).size() != 0  ) {
+        if (rentService.getAllRentInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(uuid) && x.getEndDate() == null).size() != 0  ) {
             throw new UserUsedInCurrentRentException("You cannot deactivate this user because he has not end his rent yet!");
         }
 

@@ -15,17 +15,16 @@ import java.util.UUID;
 public class RentService {
 
     @Inject
-    GetAllRentPredicateInfrastructurePort getAllRentPredicateInfrastructurePort;
-    @Inject
     GetAllRentInfrastructurePort getAllRentInfrastructurePort;
+
     @Inject
     GetRentInfrastructurePort getRentInfrastructurePort;
+
     @Inject
     RemoveRentInfrastructurePort removeRentInfrastructurePort;
+
     @Inject
     AddRentInfrastructurePort addRentInfrastructurePort;
-    @Inject
-    GetRentPredicateInfrastructurePort getRentPredicateInfrastructurePort;
 
     public RentService() {
     }
@@ -97,19 +96,19 @@ public class RentService {
     }
 
     public List<Rent> findAllCurrentRentsByClient(UUID userUuid) {
-        return getAllRentPredicateInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(userUuid) && x.getEndDate() == null);
+        return getAllRentInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(userUuid) && x.getEndDate() == null);
     }
 
     public List<Rent> findAllCurrentRentsByBook(UUID bookUuid) {
-        return getAllRentPredicateInfrastructurePort.getAll(x -> x.getBook().getUuid().equals(bookUuid) && x.getEndDate() == null);
+        return getAllRentInfrastructurePort.getAll(x -> x.getBook().getUuid().equals(bookUuid) && x.getEndDate() == null);
     }
 
     public List<Rent> findAllArchivedRentsByClient(UUID userUuid) {
-        return getAllRentPredicateInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(userUuid) && x.getEndDate() != null);
+        return getAllRentInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(userUuid) && x.getEndDate() != null);
     }
 
     public List<Rent> findAllArchivedRentsByBook(UUID bookUuid) {
-        return getAllRentPredicateInfrastructurePort.getAll(x -> x.getBook().getUuid().equals(bookUuid) && x.getEndDate() != null);
+        return getAllRentInfrastructurePort.getAll(x -> x.getBook().getUuid().equals(bookUuid) && x.getEndDate() != null);
     }
 
 }
