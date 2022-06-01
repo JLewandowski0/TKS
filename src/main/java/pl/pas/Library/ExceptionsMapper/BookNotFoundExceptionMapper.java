@@ -1,6 +1,6 @@
 package pl.pas.Library.ExceptionsMapper;
 
-import pl.pas.Library.exceptions.BookNotFoundException;
+import exceptions.BookNotFoundException;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;

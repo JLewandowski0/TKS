@@ -1,7 +1,6 @@
 package pl.pas.Library.ExceptionsMapper;
 
-import pl.pas.Library.exceptions.BookAlreadyRentedException;
-import pl.pas.Library.exceptions.UserNotActiveException;
+import exceptions.UserNotActiveException;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
