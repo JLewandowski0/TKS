@@ -1,37 +1,43 @@
 package services;
 
 
-import infrastructure.UserPorts.*;
-import exceptions.*;
+import exceptions.UserNotActiveException;
+import exceptions.UserNotFoundException;
+import exceptions.UserNotUniqueLoginException;
+import exceptions.UserUsedInCurrentRentException;
+import infrastructurePorts.RentPorts.GetAllRentInfrastructurePort;
+import infrastructurePorts.UserPorts.*;
 
 import model.AccessLevel;
 import model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import javax.ejb.Stateless;
-import javax.inject.Inject;
+
 import java.util.List;
 import java.util.UUID;
 
-@Stateless
+@Service
 public class UserService {
 
 
-    @Inject
-    private RentService rentService;
+    private final GetAllUsersInfrastructurePort getAllUsersInfrastructurePort;
 
-    @Inject
-    GetAllUsersInfrastructurePort getAllUsersInfrastructurePort;
+    private final GetUserInfrastructurePort getUserInfrastructurePort;
 
-    @Inject
-    GetUserInfrastructurePort getUserInfrastructurePort;
+    private final AddUserInfrastructurePort addUserInfrastructurePort;
 
-    @Inject
-    AddUserInfrastructurePort addUserInfrastructurePort;
+    private final RemoveUserInfrastructurePort removeUserInfrastructurePort;
 
-    @Inject
-    RemoveUserInfrastructurePort removeUserInfrastructurePort;
-
-
+    private final GetAllRentInfrastructurePort getAllRentInfrastructurePort;
+@Autowired
+    public UserService(GetAllUsersInfrastructurePort getAllUsersInfrastructurePort, GetUserInfrastructurePort getUserInfrastructurePort, AddUserInfrastructurePort addUserInfrastructurePort, RemoveUserInfrastructurePort removeUserInfrastructurePort, GetAllRentInfrastructurePort getAllRentInfrastructurePort) {
+        this.getAllUsersInfrastructurePort = getAllUsersInfrastructurePort;
+        this.getUserInfrastructurePort = getUserInfrastructurePort;
+        this.addUserInfrastructurePort = addUserInfrastructurePort;
+        this.removeUserInfrastructurePort = removeUserInfrastructurePort;
+        this.getAllRentInfrastructurePort = getAllRentInfrastructurePort;
+    }
     public User addUser(User user) {
         addUserInfrastructurePort.add(user);
         return user;
@@ -90,7 +96,7 @@ public class UserService {
             throw new UserNotActiveException("This user is already inactive!");
         }
 
-        if (rentService.getAllRentInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(uuid) && x.getEndDate() == null).size() != 0  ) {
+        if (getAllRentInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(uuid) && x.getEndDate() == null).size() != 0  ) {
             throw new UserUsedInCurrentRentException("You cannot deactivate this user because he has not end his rent yet!");
         }
 

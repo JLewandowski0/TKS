@@ -1,32 +1,32 @@
 package services;
 
 
-import infrastructure.RentPorts.*;
 import exceptions.*;
+import infrastructurePorts.RentPorts.*;
 import model.Rent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import javax.ejb.Stateless;
-import javax.inject.Inject;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-@Stateless
+@Service
 public class RentService {
 
-    @Inject
-    GetAllRentInfrastructurePort getAllRentInfrastructurePort;
+    private final GetAllRentInfrastructurePort getAllRentInfrastructurePort;
 
-    @Inject
-    GetRentInfrastructurePort getRentInfrastructurePort;
+    private final GetRentInfrastructurePort getRentInfrastructurePort;
 
-    @Inject
-    RemoveRentInfrastructurePort removeRentInfrastructurePort;
+    private final RemoveRentInfrastructurePort removeRentInfrastructurePort;
 
-    @Inject
-    AddRentInfrastructurePort addRentInfrastructurePort;
-
-    public RentService() {
+    private final AddRentInfrastructurePort addRentInfrastructurePort;
+    @Autowired
+    public RentService(AddRentInfrastructurePort addRentInfrastructurePort, GetAllRentInfrastructurePort getAllRentInfrastructurePort, GetRentInfrastructurePort getRentInfrastructurePort, RemoveRentInfrastructurePort removeRentInfrastructurePort) {
+        this.getAllRentInfrastructurePort = getAllRentInfrastructurePort;
+        this.getRentInfrastructurePort = getRentInfrastructurePort;
+        this.removeRentInfrastructurePort = removeRentInfrastructurePort;
+        this.addRentInfrastructurePort = addRentInfrastructurePort;
     }
 
     public Rent addRent(Rent rent) {

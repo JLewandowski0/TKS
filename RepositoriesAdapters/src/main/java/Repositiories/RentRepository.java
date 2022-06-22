@@ -1,8 +1,8 @@
 package Repositiories;
 
+import org.springframework.stereotype.Repository;
 import pl.tks.model.RentEnt;
 
-import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -10,8 +10,8 @@ import java.util.function.Predicate;
 
 import static java.util.Collections.synchronizedList;
 
-@ApplicationScoped
-public class RentRepository implements Repository<RentEnt> {
+@Repository
+public class RentRepository implements RepositoryInterface<RentEnt> {
 
     private final List<RentEnt> rents = synchronizedList(new ArrayList<>());
 

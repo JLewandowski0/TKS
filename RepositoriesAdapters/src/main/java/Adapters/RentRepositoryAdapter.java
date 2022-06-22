@@ -2,21 +2,22 @@ package Adapters;
 
 
 import Repositiories.RentRepository;
-import infrastructure.RentPorts.AddRentInfrastructurePort;
-import infrastructure.RentPorts.GetAllRentInfrastructurePort;
-import infrastructure.RentPorts.GetRentInfrastructurePort;
-import infrastructure.RentPorts.RemoveRentInfrastructurePort;
+import infrastructurePorts.RentPorts.AddRentInfrastructurePort;
+import infrastructurePorts.RentPorts.GetAllRentInfrastructurePort;
+import infrastructurePorts.RentPorts.GetRentInfrastructurePort;
+import infrastructurePorts.RentPorts.RemoveRentInfrastructurePort;
 import model.Rent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.tks.model.RentEnt;
 
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;
-
+@Component
 public class RentRepositoryAdapter implements AddRentInfrastructurePort, GetAllRentInfrastructurePort, GetRentInfrastructurePort, RemoveRentInfrastructurePort {
-    @Inject
+    @Autowired
     RentRepository rentRepository;
     DomainMapper.RentMapper rentDomainMapper;
     EntityMapper.RentMapper rentEntityMapper;

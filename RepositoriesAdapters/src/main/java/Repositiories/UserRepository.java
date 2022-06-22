@@ -1,10 +1,10 @@
 package Repositiories;
 
+import org.springframework.stereotype.Repository;
 import pl.tks.model.UserEnt;
 import exceptions.UserNotUniqueIdException;
 import exceptions.UserNotUniqueLoginException;
 
-import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -12,8 +12,8 @@ import java.util.function.Predicate;
 
 import static java.util.Collections.synchronizedList;
 
-@ApplicationScoped
-public class UserRepository implements Repository<UserEnt> {
+@Repository
+public class UserRepository implements RepositoryInterface<UserEnt> {
 
     private final List<UserEnt> users = synchronizedList(new ArrayList<>());
 

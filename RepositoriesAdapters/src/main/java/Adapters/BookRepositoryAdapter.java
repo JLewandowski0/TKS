@@ -6,18 +6,19 @@ import java.util.UUID;
 import java.util.function.Predicate;
 
 import Repositiories.BookRepository;
-import infrastructure.BookPorts.AddBookInfrastructurePort;
-import infrastructure.BookPorts.GetAllBookInfrastructurePort;
-import infrastructure.BookPorts.GetBookInfrastructurePort;
-import infrastructure.BookPorts.RemoveBookInfrastracturePort;
+import infrastructurePorts.BookPorts.AddBookInfrastructurePort;
+import infrastructurePorts.BookPorts.GetAllBookInfrastructurePort;
+import infrastructurePorts.BookPorts.GetBookInfrastructurePort;
+import infrastructurePorts.BookPorts.RemoveBookInfrastracturePort;
 import model.Book;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.tks.model.BookEnt;
 
-import javax.inject.Inject;
-
+@Component
 public class BookRepositoryAdapter implements AddBookInfrastructurePort, GetBookInfrastructurePort, RemoveBookInfrastracturePort, GetAllBookInfrastructurePort {
 
-    @Inject
+    @Autowired
     BookRepository bookRepository;
     DomainMapper.BookMapper bookDomainMapper;
     EntityMapper.BookMapper bookEntityMapper;

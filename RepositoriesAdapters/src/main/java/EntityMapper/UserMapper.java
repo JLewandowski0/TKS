@@ -3,10 +3,7 @@ package EntityMapper;
 import model.*;
 import pl.tks.model.*;
 
-import javax.ejb.Stateless;
 
-
-@Stateless
 public class UserMapper {
     public UserEnt ConvertUserToUserEnt(User user){
         switch(user.getAccessLevel()){

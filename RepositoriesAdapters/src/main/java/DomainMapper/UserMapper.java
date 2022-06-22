@@ -4,10 +4,9 @@ import model.*;
 
 import pl.tks.model.UserEnt;
 
-import javax.ejb.Stateless;
 
 
-@Stateless
+
 public class UserMapper {
     public User ConvertUserEntToUser(UserEnt userEnt){
         switch(userEnt.getAccessLevel()){

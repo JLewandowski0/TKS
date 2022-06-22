@@ -1,21 +1,22 @@
 package Adapters;
 
 import Repositiories.UserRepository;
-import infrastructure.UserPorts.AddUserInfrastructurePort;
-import infrastructure.UserPorts.GetAllUsersInfrastructurePort;
-import infrastructure.UserPorts.GetUserInfrastructurePort;
-import infrastructure.UserPorts.RemoveUserInfrastructurePort;
+import infrastructurePorts.UserPorts.AddUserInfrastructurePort;
+import infrastructurePorts.UserPorts.GetAllUsersInfrastructurePort;
+import infrastructurePorts.UserPorts.GetUserInfrastructurePort;
+import infrastructurePorts.UserPorts.RemoveUserInfrastructurePort;
 import model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.tks.model.UserEnt;
 
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;
-
+@Component
 public class UserRepositoryAdapter implements AddUserInfrastructurePort, GetAllUsersInfrastructurePort, GetUserInfrastructurePort, RemoveUserInfrastructurePort {
-    @Inject
+    @Autowired
     UserRepository userRepository;
     DomainMapper.UserMapper userDomainMapper;
     EntityMapper.UserMapper userEntityMapper;

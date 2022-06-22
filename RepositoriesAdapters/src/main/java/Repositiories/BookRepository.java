@@ -1,9 +1,9 @@
 package Repositiories;
 
 import exceptions.BookNotUniqueIdException;
+import org.springframework.stereotype.Repository;
 import pl.tks.model.BookEnt;
 
-import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -11,8 +11,8 @@ import java.util.function.Predicate;
 
 import static java.util.Collections.synchronizedList;
 
-@ApplicationScoped
-public class BookRepository implements Repository<BookEnt> {
+@Repository
+public class BookRepository implements RepositoryInterface<BookEnt> {
 
     private final List<BookEnt> books = synchronizedList(new ArrayList<>());
 
