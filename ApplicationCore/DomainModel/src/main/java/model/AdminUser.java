@@ -1,7 +1,9 @@
 package model;
 
+import java.util.UUID;
+
 public class AdminUser extends User {
-    public AdminUser(String login, String address, String pesel, AccessLevel accessLevel) {
-        super(login, address, pesel, accessLevel);
+    public AdminUser(UUID uuid,String login, String address, String pesel, AccessLevel accessLevel) {
+        super(uuid,login, address, pesel, accessLevel);
     }
 }

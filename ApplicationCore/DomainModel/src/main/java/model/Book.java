@@ -13,7 +13,8 @@ public class Book {
     private boolean archived = false;
 
 
-    public Book(String title, String authorName, LocalDate releaseDate) {
+    public Book(UUID uuid,String title, String authorName, LocalDate releaseDate) {
+        this.uuid = uuid;
         this.title = title;
         this.authorName = authorName;
         this.releaseDate = releaseDate;

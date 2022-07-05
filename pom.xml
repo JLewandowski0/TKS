@@ -20,9 +20,10 @@
     <modules>
         <module>ApplicationCore</module>
         <module>ApplicationPorts</module>
-        <module>RepositoriesAdapters</module>
         <module>ApplicationControllers</module>
+        <module>RepositoryAdapters</module>
         <module>Exeptions</module>
+        <module>Repositories</module>
     </modules>
 
     <properties>
@@ -34,6 +35,18 @@
 
     <dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>{version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit-bom</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>

@@ -38,9 +38,8 @@ public class UserService {
         this.removeUserInfrastructurePort = removeUserInfrastructurePort;
         this.getAllRentInfrastructurePort = getAllRentInfrastructurePort;
     }
-    public User addUser(User user) {
-        addUserInfrastructurePort.add(user);
-        return user;
+    public boolean addUser(User user) {
+        return addUserInfrastructurePort.add(user);
     }
 
     public User getUser(UUID uuid) {
@@ -84,7 +83,7 @@ public class UserService {
         }
     }
 
-    public void changeActivityOfUser(UUID uuid, boolean var) {
+    public boolean changeActivityOfUser(UUID uuid, boolean var) {
         User user = getUserInfrastructurePort.get(uuid);
         if (user == null) {
             throw new UserNotFoundException("There is no user with given uuid!");
@@ -101,23 +100,9 @@ public class UserService {
         }
 
         user.changeActivity();
+        return true;
 
     }
-
-//  usuwanie użytkowników działało w ten sam sposób jak w przypadku książek. (Posiadł on pole archived, repo odpowiednio filtrowały użytkowników)
-
-//    public void removeUser(UUID uuid) {
-//        User user = userRepository.get(uuid);
-//
-//        if (user == null) {
-//            throw new UserNotFoundException("There is no user with given uuid!");
-//        }
-//
-//        if (rentRepository.getAll(x -> x.getClient().getUuid().equals(uuid)).size() != 0) {
-//            throw new UserUsedInCurrentRentException("This user has not end his rent yet!");
-//        }
-//        userRepository.remove(user);
-//    }
 
 
 }

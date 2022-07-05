@@ -22,8 +22,13 @@
         <version>1.0-SNAPSHOT</version>
     </dependency>
         <dependency>
-            <groupId>pl.tks.repository</groupId>
-            <artifactId>RepositoriesAdapters</artifactId>
+            <groupId>pl.tks.repositories</groupId>
+            <artifactId>Repositories</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>pl.tks.repositryadapters</groupId>
+            <artifactId>RepositoryAdapters</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

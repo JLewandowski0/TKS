@@ -8,7 +8,7 @@ public class Rent {
 
     private UUID uuid;
     private LocalDate startDate;
-    private LocalDate endDate = null;
+    private LocalDate endDate;
     private User client;
     private Book book;
 
@@ -41,5 +41,9 @@ public class Rent {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
     }
 }

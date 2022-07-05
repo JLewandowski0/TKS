@@ -33,9 +33,8 @@ public class BookService {
         this.addBookInfrastructurePort = addBookInfrastructurePort;
         this.getAllRentInfrastructurePort = getAllRentInfrastructurePort;
     }
-    public Book addBook(Book book){
-        addBookInfrastructurePort.add(book);
-        return book;
+    public boolean addBook(Book book){
+        return addBookInfrastructurePort.add(book);
     }
 
     public Book getBook(UUID id) {
@@ -60,7 +59,7 @@ public class BookService {
         book.setReleaseDate(UpdatedBook.getReleaseDate());
     }
 
-    public void removeBook(UUID uuid){
+    public boolean removeBook(UUID uuid){
         Book book = getBookInfrastructurePort.get(uuid);
         if (book == null) {
             throw new BookNotFoundException("There is no book with given id!");
@@ -69,7 +68,7 @@ public class BookService {
             throw new BookAlreadyRentedException("You cannot remove rented book!");
         }
         removeBookInfrastracturePort.remove(book);
-
+        return true;
     }
 
 }

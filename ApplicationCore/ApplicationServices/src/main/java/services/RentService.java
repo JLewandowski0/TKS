@@ -29,7 +29,7 @@ public class RentService {
         this.addRentInfrastructurePort = addRentInfrastructurePort;
     }
 
-    public Rent addRent(Rent rent) {
+    public boolean addRent(Rent rent) {
 
         // może być null ponieważ RentMapper wywołuję metody get z repozytoriów, które zwracają obiekt lub null.
 
@@ -50,7 +50,7 @@ public class RentService {
         }
         addRentInfrastructurePort.add(rent);
 
-        return rent;
+        return true;
     }
 
     public Rent getRent(UUID uuid) {
@@ -66,7 +66,7 @@ public class RentService {
         return getAllRentInfrastructurePort.getAll();
     }
 
-    public void endRent(UUID uuid) {
+    public Rent endRent(UUID uuid) {
         Rent rent = getRentInfrastructurePort.get(uuid);
 
         if (rent == null) {
@@ -76,11 +76,11 @@ public class RentService {
         if (LocalDate.now().isBefore(rent.getStartDate())){
             throw new RentWrongDateException("Rent has not started yet!");
         }
+        return removeRentInfrastructurePort.endRent(uuid);
 
-        rent.setEndDate(LocalDate.now());
     }
 
-    public void removeRent(UUID uuid) {
+    public boolean removeRent(UUID uuid) {
         Rent rent = getRentInfrastructurePort.get(uuid);
 
         if (rent == null) {
@@ -91,9 +91,10 @@ public class RentService {
             throw new RentRemoveAfterEndedException("You cannot remove ended rent!");
         }
 
-        removeRentInfrastructurePort.remove(rent);
+        return removeRentInfrastructurePort.remove(rent);
 
     }
+
 
     public List<Rent> findAllCurrentRentsByClient(UUID userUuid) {
         return getAllRentInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(userUuid) && x.getEndDate() == null);

@@ -11,7 +11,8 @@ public abstract class User {
     private AccessLevel accessLevel;
     private boolean active = true;
 
-    public User(String login, String address, String pesel, AccessLevel accessLevel) {
+    public User(UUID uuid, String login, String address, String pesel, AccessLevel accessLevel) {
+        this.uuid = uuid;
         this.login = login;
         this.address = address;
         this.pesel = pesel;
