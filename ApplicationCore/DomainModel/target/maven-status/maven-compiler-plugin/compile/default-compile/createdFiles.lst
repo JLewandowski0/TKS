@@ -1,7 +1,0 @@
-model\AccessLevel.class
-model\Client.class
-model\AdminUser.class
-model\Rent.class
-model\Book.class
-model\AdminResources.class
-model\User.class

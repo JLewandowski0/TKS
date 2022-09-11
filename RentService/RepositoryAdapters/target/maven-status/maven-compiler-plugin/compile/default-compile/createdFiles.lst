@@ -1,0 +1,7 @@
+Adapters\RentRepositoryAdapter.class
+Adapters\UserRepositoryAdapter.class
+Repository\BookRepository.class
+Adapters\BookRepositoryAdapter.class
+Repository\RentRepository.class
+Repository\RepositoryInterface.class
+Repository\UserRepository.class
