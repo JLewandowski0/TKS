@@ -1,7 +1,5 @@
 import RepoModel.AccessLevelEnt;
-import RepoModel.BookEnt;
 import RepoModel.ClientEnt;
-import RepoModel.RentEnt;
 import Repository.RentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -4,8 +4,6 @@ package services;
 import exceptions.UserNotActiveException;
 import exceptions.UserNotFoundException;
 import exceptions.UserNotUniqueLoginException;
-import exceptions.UserUsedInCurrentRentException;
-import infrastructurePorts.RentPorts.GetAllRentInfrastructurePort;
 import infrastructurePorts.UserPorts.AddUserInfrastructurePort;
 import infrastructurePorts.UserPorts.GetAllUsersInfrastructurePort;
 import infrastructurePorts.UserPorts.GetUserInfrastructurePort;
@@ -30,14 +28,12 @@ public class UserService {
 
     private final RemoveUserInfrastructurePort removeUserInfrastructurePort;
 
-    private final GetAllRentInfrastructurePort getAllRentInfrastructurePort;
 @Autowired
-    public UserService(GetAllUsersInfrastructurePort getAllUsersInfrastructurePort, GetUserInfrastructurePort getUserInfrastructurePort, AddUserInfrastructurePort addUserInfrastructurePort, RemoveUserInfrastructurePort removeUserInfrastructurePort, GetAllRentInfrastructurePort getAllRentInfrastructurePort) {
+    public UserService(GetAllUsersInfrastructurePort getAllUsersInfrastructurePort, GetUserInfrastructurePort getUserInfrastructurePort, AddUserInfrastructurePort addUserInfrastructurePort, RemoveUserInfrastructurePort removeUserInfrastructurePort) {
         this.getAllUsersInfrastructurePort = getAllUsersInfrastructurePort;
         this.getUserInfrastructurePort = getUserInfrastructurePort;
         this.addUserInfrastructurePort = addUserInfrastructurePort;
         this.removeUserInfrastructurePort = removeUserInfrastructurePort;
-        this.getAllRentInfrastructurePort = getAllRentInfrastructurePort;
     }
     public boolean addUser(User user) {
         return addUserInfrastructurePort.add(user);
@@ -96,9 +92,6 @@ public class UserService {
             throw new UserNotActiveException("This user is already inactive!");
         }
 
-        if (getAllRentInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(uuid) && x.getEndDate() == null).size() != 0  ) {
-            throw new UserUsedInCurrentRentException("You cannot deactivate this user because he has not end his rent yet!");
-        }
 
         user.changeActivity();
         return true;
