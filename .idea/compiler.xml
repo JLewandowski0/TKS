@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Repositories" />
+        <module name="ApplicationREST (1)" />
+        <module name="DomainModel" />
+        <module name="Exeptions" />
+        <module name="RepositoryAdapters" />
+        <module name="DomainModel (1)" />
+        <module name="UserExeptions" />
+        <module name="UserRepositories" />
+        <module name="ApplicationPorts" />
+        <module name="ApplicationServices (1)" />
+        <module name="UserRepositoryAdapters" />
+        <module name="ApplicationServices" />
+        <module name="ApplicationREST" />
+        <module name="UserApplicationPorts" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="RepositoriesAdapters" target="1.8" />
+      <module name="TKS" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApplicationPorts" options="-parameters" />
+      <module name="ApplicationREST" options="-parameters" />
+      <module name="ApplicationREST (1)" options="-parameters" />
+      <module name="ApplicationServices" options="-parameters" />
+      <module name="ApplicationServices (1)" options="-parameters" />
+      <module name="DomainModel" options="-parameters" />
+      <module name="DomainModel (1)" options="-parameters" />
+      <module name="Exeptions" options="-parameters" />
+      <module name="Repositories" options="-parameters" />
+      <module name="RepositoryAdapters" options="-parameters" />
+      <module name="UserApplicationPorts" options="-parameters" />
+      <module name="UserExeptions" options="-parameters" />
+      <module name="UserRepositories" options="-parameters" />
+      <module name="UserRepositoryAdapters" options="-parameters" />
+    </option>
+  </component>
+</project>
