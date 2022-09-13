@@ -43,8 +43,7 @@ public class UserServiceAdapter implements UserInterfacePort<UserDto> {
 
     @Override
     public boolean remove(UUID uuid) {
-        boolean activity = false;
-        return userService.changeActivityOfUser(uuid, activity);
+        return userService.changeActivityOfUser(uuid);
     }
 
 }

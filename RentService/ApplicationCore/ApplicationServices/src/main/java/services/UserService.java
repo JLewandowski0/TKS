@@ -10,7 +10,6 @@ import infrastructurePorts.UserPorts.AddUserInfrastructurePort;
 import infrastructurePorts.UserPorts.GetAllUsersInfrastructurePort;
 import infrastructurePorts.UserPorts.GetUserInfrastructurePort;
 import infrastructurePorts.UserPorts.RemoveUserInfrastructurePort;
-import model.AccessLevel;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -72,9 +71,6 @@ public class UserService {
         if (user == null) {
             throw new UserNotFoundException("There is no user with given login!");
         }
-        user.setAddress(updatedUser.getAddress());
-        user.setPesel(updatedUser.getPesel());
-        user.setAccessLevel(AccessLevel.valueOf(updatedUser.getAccessLevel()));
 
         if (!updatedUser.getLogin().equals(user.getLogin())) {
             if (getUserInfrastructurePort.get(x -> x.getLogin().equals(updatedUser.getLogin())) != null) {
@@ -84,23 +80,16 @@ public class UserService {
         }
     }
 
-    public boolean changeActivityOfUser(UUID uuid, boolean var) {
+    public boolean changeActivityOfUser(UUID uuid) {
         User user = getUserInfrastructurePort.get(uuid);
         if (user == null) {
             throw new UserNotFoundException("There is no user with given uuid!");
-        }
-        if (user.isActive() && var) {
-            throw new UserNotActiveException("This user is already active!");
-        }
-        if (!user.isActive() && !var) {
-            throw new UserNotActiveException("This user is already inactive!");
         }
 
         if (getAllRentInfrastructurePort.getAll(x -> x.getClient().getUuid().equals(uuid) && x.getEndDate() == null).size() != 0  ) {
             throw new UserUsedInCurrentRentException("You cannot deactivate this user because he has not end his rent yet!");
         }
 
-        user.changeActivity();
         return true;
 
     }

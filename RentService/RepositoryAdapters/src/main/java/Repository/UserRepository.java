@@ -1,8 +1,5 @@
 package Repository;
 
-import RepoModel.AccessLevelEnt;
-import RepoModel.AdminUserEnt;
-import RepoModel.ClientEnt;
 import RepoModel.UserEnt;
 import exceptions.UserNotUniqueIdException;
 import exceptions.UserNotUniqueLoginException;
@@ -20,9 +17,9 @@ public class UserRepository implements RepositoryInterface<UserEnt> {
 
     public UserRepository() {
         this.users = new ArrayList<>();
-        this.add(new AdminUserEnt(UUID.fromString("9f77375c-7d30-4eca-a830-3ebec2ddd8a7"),"John", "Doe", "0000000000", AccessLevelEnt.ADMINUSER));
-        this.add(new ClientEnt(UUID.fromString("9f77375c-7d30-4eca-a830-cabec2ddd8a7"),"Jane", "Doe", "1111111111", AccessLevelEnt.CLIENT));
-        this.add(new ClientEnt(UUID.fromString("9f77375c-7d30-4eca-a830-bfbec2ddd8a7"),"Jack", "Doe", "2222222222", AccessLevelEnt.CLIENT));
+        this.add(new UserEnt(UUID.fromString("9f77375c-7d30-4eca-a830-3ebec2ddd8a7"),"John"));
+        this.add(new UserEnt(UUID.fromString("9f77375c-7d30-4eca-a830-cabec2ddd8a7"),"Jane"));
+        this.add(new UserEnt(UUID.fromString("9f77375c-7d30-4eca-a830-bfbec2ddd8a7"),"Jack"));
     }
 
     @Override

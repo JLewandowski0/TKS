@@ -48,9 +48,6 @@ public class RentService {
             throw new BookAlreadyRentedException("Book has been already rented!");
         }
 
-        if (!rent.getClient().isActive()) {
-            throw new UserNotActiveException("User is inactive!");
-        }
         addRentInfrastructurePort.add(rent);
 
         return true;

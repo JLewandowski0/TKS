@@ -59,7 +59,7 @@ public class UserRepositoryAdapter implements AddUserInfrastructurePort, GetAllU
     public User get(Predicate<User> predicate) {
         List<UserEnt> userEntList = userRepository.getAll();
         for (UserEnt c : userEntList) {
-        if(predicate.test(UserMapperDomain.convertUserEntToUser(c)) && c.isActive()){
+        if(predicate.test(UserMapperDomain.convertUserEntToUser(c))){
             return UserMapperDomain.convertUserEntToUser(c);
             }
         }
