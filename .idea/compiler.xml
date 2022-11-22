@@ -9,17 +9,28 @@
         <module name="Repositories" />
         <module name="ApplicationREST (1)" />
         <module name="DomainModel" />
-        <module name="Exeptions" />
         <module name="RepositoryAdapters" />
-        <module name="DomainModel (1)" />
+        <module name="ApplicationPorts (1)" />
+        <module name="Repositories (1)" />
+        <module name="DomainModel (2)" />
+        <module name="RepositoryAdapters (1)" />
         <module name="UserExeptions" />
         <module name="UserRepositories" />
-        <module name="ApplicationPorts" />
-        <module name="ApplicationServices (1)" />
         <module name="UserRepositoryAdapters" />
         <module name="ApplicationServices" />
-        <module name="ApplicationREST" />
+        <module name="ApplicationServices (2)" />
+        <module name="Exeptions (2)" />
         <module name="UserApplicationPorts" />
+        <module name="Exeptions" />
+        <module name="Repositories (2)" />
+        <module name="ApplicationREST (2)" />
+        <module name="ApplicationPorts (2)" />
+        <module name="DomainModel (1)" />
+        <module name="RepositoryAdapters (2)" />
+        <module name="ApplicationPorts" />
+        <module name="ApplicationServices (1)" />
+        <module name="ApplicationREST" />
+        <module name="Exeptions (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,20 +40,35 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApplicationControllers (1)" options="" />
+      <module name="ApplicationCore (1)" options="" />
       <module name="ApplicationPorts" options="-parameters" />
+      <module name="ApplicationPorts (1)" options="-parameters" />
+      <module name="ApplicationPorts (2)" options="-parameters" />
       <module name="ApplicationREST" options="-parameters" />
       <module name="ApplicationREST (1)" options="-parameters" />
+      <module name="ApplicationREST (2)" options="-parameters" />
       <module name="ApplicationServices" options="-parameters" />
       <module name="ApplicationServices (1)" options="-parameters" />
+      <module name="ApplicationServices (2)" options="-parameters" />
       <module name="DomainModel" options="-parameters" />
       <module name="DomainModel (1)" options="-parameters" />
+      <module name="DomainModel (2)" options="-parameters" />
       <module name="Exeptions" options="-parameters" />
+      <module name="Exeptions (1)" options="-parameters" />
+      <module name="Exeptions (2)" options="-parameters" />
+      <module name="RentService" options="" />
       <module name="Repositories" options="-parameters" />
+      <module name="Repositories (1)" options="-parameters" />
+      <module name="Repositories (2)" options="-parameters" />
       <module name="RepositoryAdapters" options="-parameters" />
+      <module name="RepositoryAdapters (1)" options="-parameters" />
+      <module name="RepositoryAdapters (2)" options="-parameters" />
       <module name="UserApplicationPorts" options="-parameters" />
       <module name="UserExeptions" options="-parameters" />
       <module name="UserRepositories" options="-parameters" />
       <module name="UserRepositoryAdapters" options="-parameters" />
+      <module name="UserService" options="" />
     </option>
   </component>
 </project>

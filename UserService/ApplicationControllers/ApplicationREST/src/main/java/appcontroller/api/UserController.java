@@ -1,6 +1,5 @@
 package appcontroller.api;
 
-import appcontroller.adapters.UserServiceAdapter;
 import appcontroller.modelDto.UserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,9 +14,9 @@ import java.util.UUID;
 @RequestMapping("/api/user")
 public class UserController {
 
-    private final UserServiceAdapter userServiceAdapter;
+    private final appcontroller.adapters.userServiceAdapter userServiceAdapter;
 
-    public UserController(UserServiceAdapter userServiceAdapter) {
+    public UserController(appcontroller.adapters.userServiceAdapter userServiceAdapter) {
         this.userServiceAdapter = userServiceAdapter;
     }
 

@@ -11,15 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
         "Repository",
         "RepoModel",
         "Adapters",
-        "infrastructurePorts.BookPorts",
-        "infrastructurePorts.RentPorts",
         "infrastructurePorts.UserPorts",
-        "interfacePorts.BookPorts",
-        "interfacePorts.RentPorts",
         "interfacePorts.UserPorts",
         "DomainMapper",
-        "EntityMapper",
-})
+        "EntityMapper",})
+
 public class UserServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(UserServiceApplication.class, args);

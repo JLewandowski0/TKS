@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class UserService {
+public class userService {
 
 
     private final GetAllUsersInfrastructurePort getAllUsersInfrastructurePort;
@@ -29,7 +29,7 @@ public class UserService {
     private final RemoveUserInfrastructurePort removeUserInfrastructurePort;
 
 @Autowired
-    public UserService(GetAllUsersInfrastructurePort getAllUsersInfrastructurePort, GetUserInfrastructurePort getUserInfrastructurePort, AddUserInfrastructurePort addUserInfrastructurePort, RemoveUserInfrastructurePort removeUserInfrastructurePort) {
+    public userService(GetAllUsersInfrastructurePort getAllUsersInfrastructurePort, GetUserInfrastructurePort getUserInfrastructurePort, AddUserInfrastructurePort addUserInfrastructurePort, RemoveUserInfrastructurePort removeUserInfrastructurePort) {
         this.getAllUsersInfrastructurePort = getAllUsersInfrastructurePort;
         this.getUserInfrastructurePort = getUserInfrastructurePort;
         this.addUserInfrastructurePort = addUserInfrastructurePort;

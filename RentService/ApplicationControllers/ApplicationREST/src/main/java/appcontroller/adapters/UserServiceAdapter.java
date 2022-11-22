@@ -5,7 +5,6 @@ import appcontroller.modelDto.UserDto;
 import interfacePorts.UserPorts.UserInterfacePort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import services.UserService;
 
 import java.util.List;
 import java.util.UUID;
@@ -14,7 +13,7 @@ import java.util.UUID;
 public class UserServiceAdapter implements UserInterfacePort<UserDto> {
 
     @Autowired
-    UserService userService;
+    services.UserService userService;
 
     @Override
     public List<UserDto> getAll() {
