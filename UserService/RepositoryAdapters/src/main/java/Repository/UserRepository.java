@@ -27,7 +27,6 @@ public class UserRepository implements RepositoryInterface<UserEnt> {
 
     @Override
     public boolean add(UserEnt user) {
-        user.setUuid(UUID.randomUUID());
         if (user.getUuid() == null || this.get(user.getUuid()) != null) {
             throw new UserNotUniqueIdException("User with given uuid already exist!");
         }

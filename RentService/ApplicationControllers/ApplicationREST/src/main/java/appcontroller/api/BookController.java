@@ -2,6 +2,7 @@ package appcontroller.api;
 
 import appcontroller.adapters.BookServiceAdapter;
 import appcontroller.modelDto.BookDto;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -42,5 +43,16 @@ public class BookController {
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
+    }
+
+    @RabbitListener(queues = "book")
+    public void rabbitListener(BookDto bookDto){
+        try{
+            bookDto.setUuid(UUID.randomUUID().toString());
+            bookServiceAdapters.add(bookDto);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
+
     }
 }

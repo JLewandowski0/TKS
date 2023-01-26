@@ -10,6 +10,8 @@
     <file url="file://$PROJECT_DIR$/RentService/ApplicationCore/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RentService/ApplicationPorts/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RentService/Exeptions/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RentService/Rabbitmq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RentService/Rabbitmq/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RentService/Repositories/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RentService/src/main/java" charset="UTF-8" />

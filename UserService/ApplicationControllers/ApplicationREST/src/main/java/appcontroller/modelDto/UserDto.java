@@ -1,11 +1,13 @@
 package appcontroller.modelDto;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import model.AccessLevel;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class UserDto {
+public class UserDto implements Serializable {
 
     private UUID uuid;
     private String login;
@@ -14,7 +16,11 @@ public class UserDto {
     private AccessLevel accessLevel;
     private boolean active = true;
 
-    public UserDto(UUID uuid ,String login, String address, String pesel, AccessLevel accessLevel) {
+    public UserDto(@JsonProperty("uuid") UUID uuid ,
+                   @JsonProperty("login") String login,
+                   @JsonProperty("address") String address,
+                   @JsonProperty("pesel") String pesel,
+                   @JsonProperty("accessLevel") AccessLevel accessLevel) {
         this.uuid = uuid;
         this.login = login;
         this.address = address;

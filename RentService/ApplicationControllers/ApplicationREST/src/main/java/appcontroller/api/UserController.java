@@ -2,6 +2,8 @@ package appcontroller.api;
 
 import appcontroller.adapters.UserServiceAdapter;
 import appcontroller.modelDto.UserDto;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +16,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-
+@Autowired
     private final UserServiceAdapter userServiceAdapter;
 
     public UserController(UserServiceAdapter userServiceAdapter) {
@@ -45,6 +47,15 @@ public class UserController {
     public UserDto findUser(@PathVariable("login") String login) {
         try {
             return userServiceAdapter.findUser(login);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
+    }
+    @RabbitListener(queues = "user_rent")
+    public void rabbitListener(UserDto userDto) {
+        try {
+            System.out.println(userDto);
+            userServiceAdapter.add(userDto);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }

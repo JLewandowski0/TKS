@@ -1,8 +1,11 @@
 package appcontroller.modelDto;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class BookDto {
+import java.io.Serializable;
+
+public class BookDto implements Serializable {
 
     private String uuid;
     private String title;
@@ -10,7 +13,9 @@ public class BookDto {
     private String releaseDate;
 
 
-    public BookDto(String title, String authorName, String releaseDate) {
+    public BookDto(@JsonProperty("title") String title,
+                   @JsonProperty("authorName") String authorName,
+                   @JsonProperty("releaseDate") String releaseDate) {
         this.title = title;
         this.authorName = authorName;
         this.releaseDate = releaseDate;

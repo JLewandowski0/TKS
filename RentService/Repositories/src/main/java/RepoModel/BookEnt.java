@@ -13,12 +13,7 @@ public class BookEnt {
     private boolean archived = false;
 
 
-    public BookEnt(String title, String authorName, LocalDate releaseDate) {
-        this.title = title;
-        this.authorName = authorName;
-        this.releaseDate = releaseDate;
 
-    }
     public BookEnt(UUID uuid,String title, String authorName, LocalDate releaseDate) {
         this.uuid = uuid;
         this.title = title;

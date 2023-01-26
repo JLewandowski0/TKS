@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  rabbitmq:
+    container_name: my-rabbit
+    image: rabbitmq:3.11.7-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  rentservice:
+    container_name: "RentService"
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    build:
+      context: ./RentService
+      dockerfile: Dockerfile
+    ports:
+      - "8383:8080"
+    environment:
+      SPRING_RABBITMQ_HOST: my-rabbit
+  userservice:
+    container_name: "UserService"
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    build:
+      context: ./UserService
+      dockerfile: Dockerfile
+    ports:
+      - "8181:8080"
+    environment:
+      SPRING_RABBITMQ_HOST: my-rabbit

@@ -3,10 +3,11 @@ package appcontroller.modelDto;
 
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class RentDto {
+public class RentDto implements Serializable {
 
         private UUID uuid;
         private LocalDate startDate;

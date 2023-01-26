@@ -1,0 +1,250 @@
+Index: .idea/workspace.xml
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,69 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4d568dcc-320d-4ec5-9db8-f03907ed1242" name="Changes" comment="Podzielone + odpalone">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java/Adapters/BookRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java/Adapters/BookRepositoryAdapter.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java/Adapters/RentRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java/Adapters/RentRepositoryAdapter.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java/Repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java/Repository/BookRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java/Repository/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/main/java/Repository/RentRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/test/java/BookRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/test/java/BookRepositoryTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/test/java/RentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RepositoryAdapters/src/test/java/RentRepositoryTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/main/java/appcontroller/adapters/BookServiceAdapter.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/main/java/appcontroller/adapters/RentServiceAdapter.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/main/java/appcontroller/api/BookController.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/main/java/appcontroller/api/RentController.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/main/java/appcontroller/mappers/BookMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/main/java/appcontroller/mappers/RentMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/main/java/appcontroller/modelDto/BookDto.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/main/java/appcontroller/modelDto/RentDto.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/test/java/BookControllerTest.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST/src/test/java/RentControllerTest.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationCore/ApplicationServices/src/main/java/services/BookService.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationCore/DomainModel/src/main/java/model/Book.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationCore/DomainModel/src/main/java/model/Rent.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationCore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/ApplicationCore/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/infrastructurePorts/BookPorts/AddBookInfrastructurePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/infrastructurePorts/BookPorts/GetAllBookInfrastructurePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/infrastructurePorts/BookPorts/GetBookInfrastructurePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/infrastructurePorts/BookPorts/RemoveBookInfrastracturePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/infrastructurePorts/RentPorts/AddRentInfrastructurePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/infrastructurePorts/RentPorts/GetAllRentInfrastructurePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/infrastructurePorts/RentPorts/GetRentInfrastructurePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/infrastructurePorts/RentPorts/RemoveRentInfrastructurePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/interfacePorts/BookPorts/BookInterfacePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/ApplicationPorts/src/main/java/interfacePorts/RentPorts/RentInterfacePort.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/ExceptionsMapper/BookAlreadyRentedExceptionMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/ExceptionsMapper/BookNotFoundExceptionMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/ExceptionsMapper/BookNotUniqueIdExceptionMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/ExceptionsMapper/RentNotFoundExceptionMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/ExceptionsMapper/RentNotUniqueIdExceptionMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/ExceptionsMapper/RentRemoveAfterEndedExceptionMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/ExceptionsMapper/RentWrongDateExceptionMapper.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/exceptions/BookAlreadyRentedException.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/exceptions/BookNotFoundException.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/exceptions/BookNotUniqueIdException.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/exceptions/RentNotFoundException.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/exceptions/RentNotUniqueIdException.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/exceptions/RentRemoveAfterEndedException.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Exeptions/src/main/java/exceptions/RentWrongDateException.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Repositories/src/main/java/DomainMapper/BookMapperDomain.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Repositories/src/main/java/DomainMapper/RentMapperDomain.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Repositories/src/main/java/EntityMapper/BookMapperEntity.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Repositories/src/main/java/EntityMapper/RentMapperEntity.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Repositories/src/main/java/RepoModel/BookEnt.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/Repositories/src/main/java/RepoModel/RentEnt.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/RepositoryAdapters/src/main/java/Adapters/BookRepositoryAdapter.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/RepositoryAdapters/src/main/java/Adapters/RentRepositoryAdapter.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/RepositoryAdapters/src/main/java/Repository/BookRepository.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/RepositoryAdapters/src/main/java/Repository/RentRepository.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/RepositoryAdapters/src/test/java/BookRepositoryTest.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserService/RepositoryAdapters/src/test/java/RentRepositoryTest.java" beforeDir="false" />
++    <list default="true" id="ee99d452-c7fd-4f79-b5c5-0333b9ef624c" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -73,34 +12,15 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="Zad_2" />
++        <entry key="$PROJECT_DIR$" value="Zad_3n" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="JpbToolWindowState">
+-    <option name="myId2FirstActivated">
+-      <map>
+-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+-      </map>
+-    </option>
+-    <option name="myId2Visible">
+-      <map>
+-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+-      </map>
+-    </option>
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="MavenImportPreferences">
+-    <option name="generalSettings">
+-      <MavenGeneralSettings>
+-        <option name="useMavenConfig" value="true" />
+-      </MavenGeneralSettings>
+-    </option>
+-  </component>
+-  <component name="ProjectId" id="2EeAXzRsZrLdKSfXNbsGuECrCyy" />
++  <component name="ProjectId" id="2FiGx0LDyCXIaqtzGFZGx94wY9Q" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -109,87 +29,19 @@
+   "keyToString": {
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "jdk.selected.JAVA_MODULE": "temurin-17",
+-    "last_opened_file_path": "C:/Users/User/Desktop/TKS/UserService",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "MavenSettings",
+-    "spring.configuration.checksum": "561f45f15b6108bec284ba0c597c2d4a"
++    "WebServerToolWindowFactoryState": "false"
+   }
+ }]]></component>
+-  <component name="RecentsManager">
+-    <key name="CopyFile.RECENT_KEYS">
+-      <recent name="C:\Users\User\Desktop\TKS\UserService" />
+-    </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\Users\User\Desktop\TKS\RentService" />
+-    </key>
+-  </component>
+-  <component name="RunDashboard">
+-    <option name="configurationTypes">
+-      <set>
+-        <option value="SpringBootApplicationConfigurationType" />
+-      </set>
+-    </option>
+-  </component>
+-  <component name="RunManager" selected="Spring Boot.RentService">
+-    <configuration name="App (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+-      <module name="UserService" />
+-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.App" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+-      <module name="RentService" />
+-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.App" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="RentService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+-      <option name="ACTIVE_PROFILES" />
+-      <module name="ApplicationREST" />
+-      <option name="SPRING_BOOT_MAIN_CLASS" value="appcontroller.RentServiceApplication" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="UserService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+-      <option name="ACTIVE_PROFILES" />
+-      <module name="ApplicationREST (1)" />
+-      <option name="SPRING_BOOT_MAIN_CLASS" value="appcontroller.UserServiceApplication" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="4d568dcc-320d-4ec5-9db8-f03907ed1242" name="Changes" comment="" />
+-      <created>1662945721135</created>
++      <changelist id="ee99d452-c7fd-4f79-b5c5-0333b9ef624c" name="Changes" comment="" />
++      <created>1664967739682</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1662945721135</updated>
+-      <workItem from="1662945722453" duration="2266000" />
+-      <workItem from="1662948807517" duration="1019000" />
+-      <workItem from="1662999882716" duration="1074000" />
+-    </task>
+-    <task id="LOCAL-00001" summary="Podzielone + odpalone">
+-      <created>1662948930763</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1662948930763</updated>
++      <updated>1664967739682</updated>
++      <workItem from="1664967741772" duration="139000" />
+     </task>
+-    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -206,8 +58,4 @@
+       </map>
+     </option>
+   </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="Podzielone + odpalone" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Podzielone + odpalone" />
+-  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,25 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="FrameworkDetectionExcludesConfiguration">
+-    <file type="web" url="file://$PROJECT_DIR$/RentService/ApplicationControllers/ApplicationREST" />
+-    <file type="web" url="file://$PROJECT_DIR$/RentService/ApplicationCore/ApplicationServices" />
+-    <file type="web" url="file://$PROJECT_DIR$/RentService/ApplicationPorts" />
+-    <file type="web" url="file://$PROJECT_DIR$/RepositoriesAdapters" />
+-    <file type="web" url="file://$PROJECT_DIR$/UserService/ApplicationControllers/ApplicationREST" />
+-    <file type="web" url="file://$PROJECT_DIR$/UserService/ApplicationCore/ApplicationServices" />
+-  </component>
+-  <component name="MavenProjectsManager">
+-    <option name="originalFiles">
+-      <list>
+-        <option value="$PROJECT_DIR$/pom.xml" />
+-        <option value="$PROJECT_DIR$/RentService/pom.xml" />
+-        <option value="$PROJECT_DIR$/UserService/pom.xml" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="temurin-17" project-jdk-type="JavaSDK" />
+-  <component name="ProjectType">
+-    <option name="id" value="jpab" />
+-  </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="temurin-17" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
